@@ -1,5 +1,8 @@
 #CGPA calculator
 import itertools
+import os
+import sys
+
 #Subject and credits list
 Sem1={'Calculus and its Applications':4, 'Physics':3, 'Chemistry of Electronic materials':3,
       'Problem solving and C programming':2, 'Electrical Engineering Drawing':2,
@@ -89,7 +92,6 @@ for grade,value in itertools.zip_longest(Sem5_list,Sem5.values()):
 # print(S5_totalgrade)
 #print(f"total grade for sem1 {S1_totalgrade}".format(S1_totalgrade))
 
-print('\n')
 print('='*50)
 #Calculation of GPA for each semester
 S1_GPA=S1_totalgrade/totalcredit1
@@ -97,13 +99,12 @@ S2_GPA=S2_totalgrade/totalcredit2
 S3_GPA=S3_totalgrade/totalcredit3
 S4_GPA=S4_totalgrade/totalcredit4
 S5_GPA=S5_totalgrade/totalcredit5
-print(f"GPA of 1st Semester: {S1_GPA}".format(S1_GPA))
-print(f"GPA of 2st Semester: {S2_GPA}".format(S2_GPA))
-print(f"GPA of 3st Semester: {S3_GPA}".format(S3_GPA))
-print(f"GPA of 4st Semester: {S4_GPA}".format(S4_GPA))
-print(f"GPA of 5st Semester: {S5_GPA}".format(S5_GPA))
 
 #Calculation of CGPA
 CGPA=(S1_GPA+S2_GPA+S3_GPA+S4_GPA+S5_GPA)/5
-print('=+'*150)
-print(f"CGPA: {CGPA}".format(CGPA))
+
+#create a txt file for output
+f=open(os.path.join(sys.path[0], "CGPA.txt"), "w")
+f.write(f"GPA of 1st Semester: {S1_GPA}\nGPA of 2st Semester: {S2_GPA}\nGPA of 3st Semester: {S3_GPA}\nGPA of 4st Semester: {S4_GPA}\nGPA of 5st Semester: {S5_GPA}\n\nCGPA: {CGPA}""".format(S1_GPA,S2_GPA,S3_GPA,S4_GPA,S5_GPA,CGPA))
+f.close()
+
