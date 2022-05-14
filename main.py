@@ -21,7 +21,7 @@ Sem5={'Digital Electronics':4, 'Control systems':3, 'Electrical Power Generation
 
 #input marks
 print("Enter the grade point for the following subjects")
-print("Semester 1")
+print("\nSemester 1")
 Sem1_list=[]
 for key in Sem1:
     Sem1_list.append(input(key+": "))
