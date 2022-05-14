@@ -17,31 +17,31 @@ Sem5={'Digital Electronics':4, 'Control systems':3, 'Electrical Power Generation
       'Digital Electronics laboratory':1, 'Linear Integrated circuits':3,'Power electronics and applications':4,'Business Managerial communications':1}
 
 #input marks
-print("Enter the grades for the following subjects")
+print("Enter the grade point for the following subjects")
 print("Semester 1")
 Sem1_list=[]
 for key in Sem1:
-    Sem1_list.append(input(key+" marks: "))
+    Sem1_list.append(input(key+": "))
 print('-'*100)
 print("Semester 2")
 Sem2_list=[]
 for key in Sem2:
-    Sem2_list.append(input(key+" marks: "))
+    Sem2_list.append(input(key+": "))
 print('-'*100)
 print("Semester 3")
 Sem3_list=[]
 for key in Sem3:
-    Sem3_list.append(input(key+" marks: "))
+    Sem3_list.append(input(key+": "))
 print('-'*100)
 print("Semester 4")
 Sem4_list=[]
 for key in Sem4:
-    Sem4_list.append(input(key+" marks: "))
+    Sem4_list.append(input(key+": "))
 print('-'*100)
 print("Semester 5")
 Sem5_list=[]
 for key in Sem5:
-    Sem5_list.append(input(key+" marks: "))
+    Sem5_list.append(input(key+": "))
 
 # print(Sem1_list,Sem2_list,Sem3_list,Sem4_list)
 
