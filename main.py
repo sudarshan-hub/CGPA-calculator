@@ -119,7 +119,6 @@ CGPA=(S1_GPA+S2_GPA+S3_GPA+S4_GPA+S5_GPA+S6_GPA)/6
 
 #create a txt file for output
 f=open(os.path.join(sys.path[0], "CGPA.txt"), "w")
-f.write(f"GPA of 1st Semester: {S1_GPA}\nGPA of 2st Semester: {S2_GPA}\nGPA of 3st Semester: {S3_GPA}\n
-      GPA of 4st Semester: {S4_GPA}\nGPA of 5st Semester: {S5_GPA}\nGPA of 6st Semester: {S6_GPA}\n\nCGPA: {CGPA}""".format(S1_GPA,S2_GPA,S3_GPA,S4_GPA,S5_GPA,S6_GPA,CGPA))
+f.write(f"GPA of 1st Semester: {S1_GPA}\nGPA of 2st Semester: {S2_GPA}\nGPA of 3st Semester: {S3_GPA}\nGPA of 4st Semester: {S4_GPA}\nGPA of 5st Semester: {S5_GPA}\nGPA of 6st Semester: {S6_GPA}\n\nCGPA: {CGPA}""".format(S1_GPA,S2_GPA,S3_GPA,S4_GPA,S5_GPA,S6_GPA,CGPA))
 f.close()
 
