@@ -18,6 +18,8 @@ Sem4={'Network Theory':4, 'Electronic circuits':3, 'Electronic circuits laborato
       'Induction and synchronous machines laboratory':2, 'Soft skills development':1}
 Sem5={'Digital Electronics':4, 'Control systems':3, 'Electrical Power Generation systems':3, 'Instrumentation and Control Laboratory':1,
       'Digital Electronics laboratory':1, 'Linear Integrated circuits':3,'Power electronics and applications':4,'Business Managerial communications':1}
+Sem6={'Embedded Controllers':3, 'Electrical Machine Design':4, 'Power Electronics and Embedded Controllers Laboratory':1, 'Digital Signal Processing':3, 
+      'Transmission and Distribution':4, 'Digital signal processing and linear integrated circuits laboratory':1, 'Quantitative and reasoning skills':1}
 
 #input marks
 print("Enter the grade point for the following subjects")
@@ -45,6 +47,11 @@ print("Semester 5")
 Sem5_list=[]
 for key in Sem5:
     Sem5_list.append(input(key+": "))
+print('-'*100)
+print("Semester 6")
+Sem6_list=[]
+for key in Sem6:
+    Sem6_list.append(input(key+": "))
 
 # print(Sem1_list,Sem2_list,Sem3_list,Sem4_list)
 
@@ -68,6 +75,9 @@ for value in Sem4.values():
 totalcredit5=0
 for value in Sem5.values():
     totalcredit5=totalcredit5+int(value)
+totalcredit6=0
+for value in Sem6.values():
+    totalcredit6=totalcredit6+int(value)
 
 #Total grade calculation for each semester
 S1_totalgrade=0
@@ -89,6 +99,9 @@ for grade,value in itertools.zip_longest(Sem4_list,Sem4.values()):
 S5_totalgrade=0
 for grade,value in itertools.zip_longest(Sem5_list,Sem5.values()):
       S5_totalgrade=S5_totalgrade+(int(grade)*int(value))
+S6_totalgrade=0
+for grade,value in itertools.zip_longest(Sem6_list,Sem6.values()):
+      S6_totalgrade=S6_totalgrade+(int(grade)*int(value))
 # print(S5_totalgrade)
 #print(f"total grade for sem1 {S1_totalgrade}".format(S1_totalgrade))
 
@@ -99,12 +112,14 @@ S2_GPA=S2_totalgrade/totalcredit2
 S3_GPA=S3_totalgrade/totalcredit3
 S4_GPA=S4_totalgrade/totalcredit4
 S5_GPA=S5_totalgrade/totalcredit5
+S6_GPA=S6_totalgrade/totalcredit6
 
 #Calculation of CGPA
-CGPA=(S1_GPA+S2_GPA+S3_GPA+S4_GPA+S5_GPA)/5
+CGPA=(S1_GPA+S2_GPA+S3_GPA+S4_GPA+S5_GPA+S6_GPA)/6
 
 #create a txt file for output
 f=open(os.path.join(sys.path[0], "CGPA.txt"), "w")
-f.write(f"GPA of 1st Semester: {S1_GPA}\nGPA of 2st Semester: {S2_GPA}\nGPA of 3st Semester: {S3_GPA}\nGPA of 4st Semester: {S4_GPA}\nGPA of 5st Semester: {S5_GPA}\n\nCGPA: {CGPA}""".format(S1_GPA,S2_GPA,S3_GPA,S4_GPA,S5_GPA,CGPA))
+f.write(f"GPA of 1st Semester: {S1_GPA}\nGPA of 2st Semester: {S2_GPA}\nGPA of 3st Semester: {S3_GPA}\n
+      GPA of 4st Semester: {S4_GPA}\nGPA of 5st Semester: {S5_GPA}\nGPA of 6st Semester: {S6_GPA}\n\nCGPA: {CGPA}""".format(S1_GPA,S2_GPA,S3_GPA,S4_GPA,S5_GPA,S6_GPA,CGPA))
 f.close()
 
